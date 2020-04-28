@@ -1,0 +1,11 @@
+<section>
+  <% if current_user %>
+    <%= link_to "Edit", edit_post_path(@post) %>
+  <% end %>
+  <h2>
+    <%= @post.title.titleize %>
+  </h2>
+  <p>
+    <%= @post.body %>
+  </p>
+</section>

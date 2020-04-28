@@ -1,0 +1,18 @@
+<section class="container">
+  <% @posts.each do |post| %>
+    <article class="post">
+      <h2 class="post-title">
+        <%= post.title.titleize %>
+        <% if current_user_admin? %>
+          <%= link_to "Edit", edit_post_path(post), class: 'post-edit' %>
+        <% end %>
+      </h2>
+      <span class="post-timestamp">
+        <%= post.created_at.to_s(:long) %>
+      </span>
+      <p class="post-body">
+        <%= post.body %>
+      </p>
+    </article>
+  <% end %>
+</section>
